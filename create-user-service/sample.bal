@@ -21,7 +21,7 @@ type CreateAsgardeoUserPayload record {
 };
 
 // HTTP client configuration to call the external SCIM2 Users endpoint
-http:Client asgardeoClient = check new("https://dev.api.asgardeo.io/t/orgshanthird"
+http:Client asgardeoClient = check new("https://stage.console.asgardeo.io/t/asgardeoenterpriseb2be2e/"
 );
 
 service / on new http:Listener(8090) {
@@ -65,7 +65,7 @@ service / on new http:Listener(8090) {
 
             // Set the Authorization header with the provided token
             http:Request newUserRequest = new;
-            newUserRequest.setHeader("Authorization", "Bearer cd6de198-aab8-3f71-809d-77803424b1b2");
+            newUserRequest.setHeader("Authorization", "Bearer bae7e429-b2af-335c-86af-c5ceb99c18b2");
             newUserRequest.setJsonPayload(scim2UserPayload);
 
             // Call the SCIM2 Users endpoint with explicit type descriptor
