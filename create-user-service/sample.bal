@@ -21,10 +21,9 @@ type CreateAsgardeoUserPayload record {
 };
 
 // HTTP client configuration to call the external SCIM2 Users endpoint
-http:Client asgardeoClient = check new("https://stage.console.asgardeo.io/t/asgardeoenterpriseb2be2e/"
-);
+http:Client asgardeoClient = check new("https://stage.console.asgardeo.io/t/asgardeoenterpriseb2be2e/");
 
-service / on new http:Listener(8090) {
+service / on new http:Listener(8190) {
 
     // Existing GET resource
     resource function get .(string name) returns Greeting {
